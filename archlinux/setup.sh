@@ -14,26 +14,26 @@ yellowArrows()
 ## Preprocessing
 ################
 purpleDots "General Instalations"
-yellowArrows "Instaling base-devel and Git.."
+yellowArrows "Installing base-devel and Git.."
 sudo pacman -S --noconfirm base-devel git
 echo
 
 ## Changing keyboard layout to pt-br
 #######################
 purpleDots "Changing keyboard layout to PT-BR"
-echo "KEYMAP=br-abnt2" >> /etc/vconsole.conf
+sudo echo "KEYMAP=br-abnt2" >> /etc/vconsole.conf
 yellowArrows "Layout Configured"
 echo
 
-## Instaling Kitty
+## Installing Kitty
 #######################
-yellowArrows "Instaling Kitty"
+yellowArrows "Installing Kitty"
 sudo pacman -S --noconfirm kitty
 echo
 
-## Instaling ZSH and setting up ZSH
+## Installing ZSH and setting up ZSH
 ###################################
-yellowArrows "Instaling Zsh"
+yellowArrows "Installing Zsh"
 sudo pacman -S --noconfirm zsh
 echo
 
@@ -45,21 +45,21 @@ purpleDots "Setting Zsh as default.."
 chsh -l /usr/bin/zsh
 echo
 
-## Instaling Dracula Theme on Kitty
-yellowArrows "Instaling Dracula Theme on Kitty"
+## Installing Dracula Theme on Kitty
+yellowArrows "Installing Dracula Theme on Kitty"
 git clone https://github.com/dracula/kitty/archive/master.zip
 cp dracula.conf ~/.config/kitty/
 echo "include dracula.conf" >> ~/.config/kitty/kitty.conf
 echo
 
-## Instaling Spaceship on Oh My ZSH
-purpleDots "Instaling Spaceship on Oh My ZSH"
+## Installing Spaceship on Oh My ZSH
+purpleDots "Installing Spaceship on Oh My ZSH"
 git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 echo
 
-## Instaling ZInit
-yellowArrows "Instaling ZInit"
+## Installing ZInit
+yellowArrows "Installing ZInit"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
 echo
 
@@ -96,97 +96,97 @@ makepkg -si
 cd ~/
 echo
 
-## Instaling vscode
+## Installing vscode
 ####################
-purpleDots "Instaling vscode.."
+purpleDots "Installing vscode.."
 yay -S --noconfirm visual-studio-code-bin
 echo
 
-## Instaling Firefox in pt-br
+## Installing Firefox in pt-br
 ##############################
-yellowArrows "Instaling firefox"
+yellowArrows "Installing firefox"
 sudo pacman -S --noconfirm firefox
 echo
 
-## Instaling Firefox
+## Installing Firefox
 #######################
-purpleDots "Instaling Firefox in Brazilian Portuguese.."
+purpleDots "Installing Firefox in Brazilian Portuguese.."
 sudo pacman -S --noconfirm firefox-i18n-pt-br
 echo
 
-## Instaling Chromium
+## Installing Chromium
 ##############################
-yellowArrows "Instaling Chromium"
+yellowArrows "Installing Chromium"
 sudo pacman -S --noconfirm chromium
 echo
 
-## Instaling Fira Code
+## Installing Fira Code
 #######################
-purpleDots "Instaling Fira Code"
+purpleDots "Installing Fira Code"
 sudo pacman -S --noconfirm ttf-fira-code 
 echo
 
-## Instaling qBitorrent
+## Installing qBitorrent
 ########################
-yellowArrows "Instaling qBittorrent.."
+yellowArrows "Installing qBittorrent.."
 sudo pacman -S --noconfirm qbittorrent
 echo
 
 ## Install VLC
 ##############
-purpleDots "Instaling VLC.."
+purpleDots "Installing VLC.."
 sudo pacman -S --noconfirm vlc
 echo
 
-## Instaling Ferdi
+## Installing Ferdi
 #######################
-yellowArrows "Instaling Ferdi"
+yellowArrows "Installing Ferdi"
 yay -S --noconfirm ferdi-bin
 echo
 
-## Instaling Ruby
+## Installing Ruby
 #######################
-purpleDots "Instaling Ruby"
+purpleDots "Installing Ruby"
 sudo pacman -S --noconfirm ruby
 echo "PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"" >> ~/.profile
 echo
 
-## Instaling NodeJS LTS
+## Installing NodeJS LTS
 #######################
-yellowArrows "Instaling NodeJS LTS"
+yellowArrows "Installing NodeJS LTS"
 sudo pacman -S --noconfirm nodejs-lts-dubnium
 echo
 
-## Instaling Rails
+## Installing Rails
 #######################
-purpleDots "Instaling Rails"
+purpleDots "Installing Rails"
 gem install rails
 echo
 
-## Instaling Yarn
+## Installing Yarn
 #######################
-yellowArrows "Instaling Yarn"
+yellowArrows "Installing Yarn"
 sudo pacman -S --noconfirm yarn
 echo
 
-## Instaling 7Zip
+## Installing 7Zip
 #######################
-purpleDots "Instaling 7Zip"
+purpleDots "Installing 7Zip"
 yay -S --noconfirm p7zip-gui
 echo
 
-## Instaling 7Zip
+## Installing 7Zip
 #######################
-yellowArrows "Instaling Discord"
+yellowArrows "Installing Discord"
 sudo pacman -S --noconfirm discord
 echo
 
-## Instaling Insomnia
+## Installing Insomnia
 #######################
-purpleDots "Instaling Insomnia"
+purpleDots "Installing Insomnia"
 yay -S --noconfirm insomnia
 echo
 
-## Instaling PostgreSQL
-yellowArrows "Instaling PostgreSQL"
+## Installing PostgreSQL
+yellowArrows "Installing PostgreSQL"
 sudo pacman -S --noconfirm postgresql
