@@ -141,7 +141,7 @@ echo
 #######################
 purpleDots "Installing Ruby"
 sudo pacman -S --noconfirm ruby
-echo "PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"" >> ~/.profile
+PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
 echo
 
 ## Installing NodeJS LTS
@@ -168,7 +168,7 @@ purpleDots "Installing 7Zip"
 yay -S --noconfirm p7zip-gui
 echo
 
-## Installing 7Zip
+## Installing Discord
 #######################
 yellowArrows "Installing Discord"
 sudo pacman -S --noconfirm discord
@@ -184,3 +184,5 @@ echo
 yellowArrows "Installing PostgreSQL"
 sudo pacman -S --noconfirm postgresql
 echo
+
+purpleDots "That's It :)"
