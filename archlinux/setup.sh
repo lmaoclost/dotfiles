@@ -11,6 +11,18 @@ yellowArrows()
     echo -e "\e[1;93m >>\e[0m \e[1m$1\e[0m"
 }
 
+## Updating System
+################
+yellowArrows "Updating the System"
+pacman - Syu
+echo
+
+## Generating the Locale
+################
+yellowArrows "Generating the Locale"
+locale-gen
+echo
+
 ## Ranking Mirrors
 #######################
 purpleDots "Installing Reflector and Ranking Mirrors"
@@ -29,11 +41,6 @@ echo
 purpleDots "Changing keyboard layout to PT-BR"
 sudo echo "KEYMAP=br-abnt2" >> /etc/vconsole.conf
 yellowArrows "Layout Configured"
-echo
-
-## Installing Go
-purpleDots "Installing Go / Yay Pre Requisite"
-sudo pacman -S --noconfirm go
 echo
 
 ## Installing yay
@@ -96,20 +103,26 @@ echo
 ## Installing Ruby
 #######################
 purpleDots "Installing Ruby"
-sudo pacman -S --noconfirm ruby
-PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+exec $SHELL
+
+git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
+exec $SHELL
+
+rbenv install 2.7.1
+rbenv global 2.7.1
 echo
 
 ## Installing NodeJS LTS
 #######################
-yellowArrows "Installing NodeJS LTS"
-sudo pacman -S --noconfirm nodejs-lts-dubnium
-echo
-
-## Installing Rails
-#######################
-purpleDots "Installing Rails"
-gem install rails
+yellowArrows "Installing NVM and NodeJS LTS"
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+nvm install --lts
 echo
 
 ## Installing Yarn
@@ -159,7 +172,7 @@ echo
 
 ## Installing Dracula Theme on Kitty
 yellowArrows "Installing Dracula Theme on Kitty"
-git clone https://github.com/dracula/kitty/archive/master.zip
+wget https://raw.githubusercontent.com/dracula/kitty/master/dracula.conf
 cp dracula.conf ~/.config/kitty/
 echo "include dracula.conf" >> ~/.config/kitty/kitty.conf
 echo
