@@ -1,11 +1,6 @@
 #!/bin/bash
 clear
 
-purpleDots()
-{
-    echo -e "\e[1;35m::\e[0m \e[1m$1\e[0m"
-}
-
 yellowArrows()
 {
     echo -e "\e[1;93m >>\e[0m \e[1m$1\e[0m"
@@ -25,7 +20,7 @@ echo
 
 ## Ranking Mirrors
 #######################
-purpleDots "Installing Reflector and Ranking Mirrors"
+yellowArrows "Installing Reflector and Ranking Mirrors"
 sudo pacman -S --noconfirm reflector
 reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
 echo
@@ -38,7 +33,7 @@ echo
 
 ## Changing keyboard layout to pt-br
 #######################
-purpleDots "Changing keyboard layout to PT-BR"
+yellowArrows "Changing keyboard layout to PT-BR"
 sudo echo "KEYMAP=br-abnt2" >> /etc/vconsole.conf
 yellowArrows "Layout Configured"
 echo
@@ -54,7 +49,7 @@ echo
 
 ## Installing vscode
 ####################
-purpleDots "Installing vscode.."
+yellowArrows "Installing vscode.."
 yay -S --noconfirm visual-studio-code-bin
 echo
 
@@ -66,7 +61,7 @@ echo
 
 ## Installing Firefox
 #######################
-purpleDots "Installing Firefox in Brazilian Portuguese.."
+yellowArrows "Installing Firefox in Brazilian Portuguese.."
 sudo pacman -S --noconfirm firefox-i18n-pt-br
 echo
 
@@ -78,7 +73,7 @@ echo
 
 ## Installing Fira Code
 #######################
-purpleDots "Installing Fira Code"
+yellowArrows "Installing Fira Code"
 sudo pacman -S --noconfirm ttf-fira-code 
 echo
 
@@ -90,7 +85,7 @@ echo
 
 ## Install VLC
 ##############
-purpleDots "Installing VLC.."
+yellowArrows "Installing VLC.."
 sudo pacman -S --noconfirm vlc
 echo
 
@@ -102,7 +97,7 @@ echo
 
 ## Installing Ruby
 #######################
-purpleDots "Installing Ruby"
+yellowArrows "Installing Ruby"
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
 echo 'eval "$(rbenv init -)"' >> ~/.bashrc
@@ -133,7 +128,7 @@ echo
 
 ## Installing 7Zip
 #######################
-purpleDots "Installing 7Zip"
+yellowArrows "Installing 7Zip"
 yay -S --noconfirm p7zip-gui
 echo
 
@@ -145,7 +140,7 @@ echo
 
 ## Installing Insomnia
 #######################
-purpleDots "Installing Insomnia"
+yellowArrows "Installing Insomnia"
 yay -S --noconfirm insomnia
 echo
 
@@ -166,7 +161,7 @@ yellowArrows "Installing Zsh"
 sudo pacman -S --noconfirm zsh
 echo
 
-purpleDots "Setting Zsh as default.."
+yellowArrows "Setting Zsh as default.."
 chsh -l /usr/bin/zsh
 echo
 
@@ -178,7 +173,7 @@ echo "include dracula.conf" >> ~/.config/kitty/kitty.conf
 echo
 
 ## Installing Oh My ZSH
-purpleDots "Installing Oh My ZSH"
+yellowArrows "Installing Oh My ZSH"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 echo
 
@@ -198,4 +193,4 @@ yellowArrows "Copying .zshrc to ~/.zshrc.."
 cp $DOTFILES/archlinux/zsh/.zshrc ~/.zshrc
 echo
 
-purpleDots "That's It :)"
+yellowArrows "That's It :)"
