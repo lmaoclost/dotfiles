@@ -27,6 +27,7 @@ echo
 ## Changing keyboard layout to pt-br
 #######################
 purpleDots "Changing keyboard layout to PT-BR"
+loadkeys br-abnt2
 sudo echo "KEYMAP=br-abnt2" >> /etc/vconsole.conf
 yellowArrows "Layout Configured"
 echo
