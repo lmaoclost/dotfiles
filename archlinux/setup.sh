@@ -9,7 +9,7 @@ yellowArrows()
 ## Updating System
 ################
 yellowArrows "Updating the System"
-pacman - Syu
+pacman -Syu
 echo
 
 ## Generating the Locale
