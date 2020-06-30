@@ -43,10 +43,6 @@ yellowArrows "Installing Zsh"
 sudo pacman -S --noconfirm zsh
 echo
 
-yellowArrows "Copying .zshrc to ~/.zshrc.."
-cp $DOTFILES/archlinux/zsh/.zshrc ~/.zshrc
-echo
-
 purpleDots "Setting Zsh as default.."
 chsh -l /usr/bin/zsh
 echo
@@ -58,8 +54,13 @@ cp dracula.conf ~/.config/kitty/
 echo "include dracula.conf" >> ~/.config/kitty/kitty.conf
 echo
 
+## Installing Oh My ZSH
+purpleDots "Installing Oh My ZSH"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+echo
+
 ## Installing Spaceship on Oh My ZSH
-purpleDots "Installing Spaceship on Oh My ZSH"
+yellowArrows "Installing Spaceship on Oh My ZSH"
 git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 echo
@@ -69,29 +70,10 @@ yellowArrows "Installing ZInit"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
 echo
 
-## Aditional Configuration
-purpleDots "Additional Configuration"
-echo ~/.zshrc >> 'SPACESHIP_PROMPT_ORDER=('
-echo ~/.zshrc >> 'user          # Username section'
-echo ~/.zshrc >> 'dir           # Current directory section'
-echo ~/.zshrc >> 'host          # Hostname section'
-echo ~/.zshrc >> 'git           # Git section (git_branch + git_status)'
-echo ~/.zshrc >> 'hg            # Mercurial section (hg_branch  + hg_status)'
-echo ~/.zshrc >> 'exec_time     # Execution time'
-echo ~/.zshrc >> 'line_sep      # Line break'
-echo ~/.zshrc >> 'vi_mode       # Vi-mode indicator'
-echo ~/.zshrc >> 'jobs          # Background jobs indicator'
-echo ~/.zshrc >> 'exit_code     # Exit code section'
-echo ~/.zshrc >> 'char          # Prompt character'
-echo ~/.zshrc >> ')'
-echo ~/.zshrc >> 'SPACESHIP_USER_SHOW=always'
-echo ~/.zshrc >> 'SPACESHIP_PROMPT_ADD_NEWLINE=false'
-echo ~/.zshrc >> 'SPACESHIP_CHAR_SYMBOL="❯"'
-echo ~/.zshrc >> 'SPACESHIP_CHAR_SUFFIX=" "'
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
-echo ~/.zshrc >> 'zinit light zdharma/fast-syntax-highlighting'
-echo ~/.zshrc >> 'zinit light zsh-users/zsh-autosuggestions'
-echo ~/.zshrc >> 'zinit light zsh-users/zsh-completions'
+## Setting the ~/.zshrc
+yellowArrows "Copying .zshrc to ~/.zshrc.."
+cp $DOTFILES/archlinux/zsh/.zshrc ~/.zshrc
+echo
 
 ## Installing Go
 purpleDots "Installing Go / Yay Pre Requisite"
@@ -201,3 +183,4 @@ echo
 ## Installing PostgreSQL
 yellowArrows "Installing PostgreSQL"
 sudo pacman -S --noconfirm postgresql
+echo
