@@ -11,10 +11,16 @@ yellowArrows()
     echo -e "\e[1;93m >>\e[0m \e[1m$1\e[0m"
 }
 
+## Ranking Mirrors
+#######################
+purpleDots "Installing Reflector and Ranking Mirrors"
+sudo pacman -S --noconfirm reflector
+reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
+echo
+
 ## Preprocessing
 ################
-purpleDots "General Instalations"
-yellowArrows "Installing base-devel and Git.."
+yellowArrows "Installing base-devel and Git"
 sudo pacman -S --noconfirm base-devel git
 echo
 
