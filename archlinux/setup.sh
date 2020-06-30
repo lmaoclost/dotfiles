@@ -27,53 +27,8 @@ echo
 ## Changing keyboard layout to pt-br
 #######################
 purpleDots "Changing keyboard layout to PT-BR"
-loadkeys br-abnt2
 sudo echo "KEYMAP=br-abnt2" >> /etc/vconsole.conf
 yellowArrows "Layout Configured"
-echo
-
-## Installing Kitty
-#######################
-yellowArrows "Installing Kitty"
-sudo pacman -S --noconfirm kitty
-echo
-
-## Installing ZSH and setting up ZSH
-###################################
-yellowArrows "Installing Zsh"
-sudo pacman -S --noconfirm zsh
-echo
-
-purpleDots "Setting Zsh as default.."
-chsh -l /usr/bin/zsh
-echo
-
-## Installing Dracula Theme on Kitty
-yellowArrows "Installing Dracula Theme on Kitty"
-git clone https://github.com/dracula/kitty/archive/master.zip
-cp dracula.conf ~/.config/kitty/
-echo "include dracula.conf" >> ~/.config/kitty/kitty.conf
-echo
-
-## Installing Oh My ZSH
-purpleDots "Installing Oh My ZSH"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-echo
-
-## Installing Spaceship on Oh My ZSH
-yellowArrows "Installing Spaceship on Oh My ZSH"
-git clone https://github.com/denysdovhan/spaceship-prompt.git '$ZSH_CUSTOM/themes/spaceship-prompt'
-ln -s '$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme' '$ZSH_CUSTOM/themes/spaceship.zsh-theme'
-echo
-
-## Installing ZInit
-yellowArrows "Installing ZInit"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
-echo
-
-## Setting the ~/.zshrc
-yellowArrows "Copying .zshrc to ~/.zshrc.."
-cp $DOTFILES/archlinux/zsh/.zshrc ~/.zshrc
 echo
 
 ## Installing Go
@@ -184,6 +139,50 @@ echo
 ## Installing PostgreSQL
 yellowArrows "Installing PostgreSQL"
 sudo pacman -S --noconfirm postgresql
+echo
+
+## Installing Kitty
+#######################
+yellowArrows "Installing Kitty"
+sudo pacman -S --noconfirm kitty
+echo
+
+## Installing ZSH and setting up ZSH
+###################################
+yellowArrows "Installing Zsh"
+sudo pacman -S --noconfirm zsh
+echo
+
+purpleDots "Setting Zsh as default.."
+chsh -l /usr/bin/zsh
+echo
+
+## Installing Dracula Theme on Kitty
+yellowArrows "Installing Dracula Theme on Kitty"
+git clone https://github.com/dracula/kitty/archive/master.zip
+cp dracula.conf ~/.config/kitty/
+echo "include dracula.conf" >> ~/.config/kitty/kitty.conf
+echo
+
+## Installing Oh My ZSH
+purpleDots "Installing Oh My ZSH"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+echo
+
+## Installing Spaceship on Oh My ZSH
+yellowArrows "Installing Spaceship on Oh My ZSH"
+git clone https://github.com/denysdovhan/spaceship-prompt.git '$ZSH_CUSTOM/themes/spaceship-prompt'
+ln -s '$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme' '$ZSH_CUSTOM/themes/spaceship.zsh-theme'
+echo
+
+## Installing ZInit
+yellowArrows "Installing ZInit"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
+echo
+
+## Setting the ~/.zshrc
+yellowArrows "Copying .zshrc to ~/.zshrc.."
+cp $DOTFILES/archlinux/zsh/.zshrc ~/.zshrc
 echo
 
 purpleDots "That's It :)"
