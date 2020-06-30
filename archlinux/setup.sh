@@ -15,7 +15,7 @@ echo
 ## Generating the Locale
 ################
 yellowArrows "Generating the Locale"
-locale-gen
+sudo locale-gen
 echo
 
 ## Ranking Mirrors
