@@ -87,12 +87,17 @@ echo ~/.zshrc >> 'zinit light zdharma/fast-syntax-highlighting'
 echo ~/.zshrc >> 'zinit light zsh-users/zsh-autosuggestions'
 echo ~/.zshrc >> 'zinit light zsh-users/zsh-completions'
 
-## Intalling yay
+## Installing Go
+purpleDots "Installing Go / Yay Pre Requisite"
+sudo pacman -S --noconfirm go
+echo
+
+## Installing yay
 ################
-purpleDots "Yay"
+yellowArrows "Yay"
 git clone https://aur.archlinux.org/yay.git ~/.yay
 cd ~/.yay
-makepkg -si 
+makepkg -si
 cd ~/
 echo
 
