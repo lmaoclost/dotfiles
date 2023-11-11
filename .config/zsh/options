@@ -1,0 +1,20 @@
+#!/usr/bin/zsh
+
+setopt AUTO_CD       # Auto cd on dir name
+setopt CD_ABLE_VARS  # Extend $ variables when changing directories
+setopt MENU_COMPLETE # Auto complete menu
+
+setopt APPEND_HISTORY         # Append new story to old
+setopt EXTENDED_HISTORY       # Write the history file in the ":start:elapsed;command" format.
+setopt INC_APPEND_HISTORY     # Write to the history file immediately, not when the shell exits.
+setopt SHARE_HISTORY          # Share history between all sessions.
+
+setopt HIST_IGNORE_DUPS       # Ignore duplication sequential commands
+setopt HIST_IGNORE_SPACE      # Do not record an entry starting with a space.
+
+setopt HIST_EXPIRE_DUPS_FIRST # When reaching maximum hist size, remove dups first
+setopt HIST_VERIFY            # Do not execute immediately upon history expansion.
+setopt HIST_REDUCE_BLANKS     # Remove superfluous blanks before recording entry.
+
+setopt HIST_NO_STORE          # Do not save history or fc commands
+setopt HIST_NO_FUNCTIONS      # Do not save functions
