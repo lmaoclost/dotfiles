@@ -34,6 +34,7 @@ alias clone="git clone"
 
 #Others
 alias pingg="ping google.com"
+alias config='/usr/bin/git --git-dir=/home/renan/.config/ --work-tree=/home/renan'
 
 #Python
 alias pm="python manage.py"
