@@ -1,15 +1,14 @@
 #!/usr/bin/sh
 
 # Node, Npm, Nvm
-declare -a NODE_GLOBALS=(`find ~/.nvm/versions/node -maxdepth 3 -type l -wholename '*/bin/*' | xargs -n1 basename | sort | uniq`)
+declare -a NODE_GLOBALS=(`find ~/.local/share/nvm/versions/node -maxdepth 3 -type l -wholename '*/bin/*' | xargs -n1 basename | sort | uniq`)
 
 NODE_GLOBALS+=("node")
 NODE_GLOBALS+=("nvm")
 NODE_GLOBALS+=("yarn")
 
 load_nvm () {
-    export NVM_DIR=~/.nvm
-    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+    source /usr/share/nvm/init-nvm.sh
 }
 
 for cmd in "${NODE_GLOBALS[@]}"; do

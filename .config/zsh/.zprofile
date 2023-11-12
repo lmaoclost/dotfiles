@@ -5,7 +5,7 @@ export EDITOR="code"
 export TERMINAL="kitty"
 export BROWSER="brave-desktop"
 export READER="brave-desktop"
-export FILE="thunar"
+export FILE="dolphin"
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   export MACOS=true

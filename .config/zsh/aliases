@@ -7,13 +7,13 @@
 alias history='fc -fl 1'
 
 # Shortcuts
-alias zshrc="$EDITOR $ZSHRC"
+alias zshrc="$EDITOR ~/.config/zsh"
 
 # Mirrors
 alias mirrors="sudo reflector --verbose --latest 200 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
 
 #Arch
-alias install="sudo pacman -S "
+alias install="sudo pacman -S --noconfirm "
 alias remove="sudo pacman -Rs "
 alias update="sudo pacman -Syu && yay -Syu && exit"
 
@@ -26,18 +26,15 @@ alias ni="npm install"
 alias nr="npm run dev"
 alias ns="npm start"
 
-#Config
-alias zshrc="code ~/.zshrc && exit"
-
 # Git
 alias clone="git clone"
 
 #Others
 alias pingg="ping google.com"
-alias config='/usr/bin/git --git-dir=/home/renan/.config/ --work-tree=/home/renan'
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 #Python
 alias pm="python manage.py"
-alias pvenv="python -m venv ./venv"
+alias pv="python -m venv ./venv"
 alias pi="pip install"
 alias ps="source venv/bin/activate"
