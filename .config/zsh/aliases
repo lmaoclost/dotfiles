@@ -13,9 +13,9 @@ alias zshrc="$EDITOR ~/.config/zsh"
 alias mirrors="sudo reflector --verbose --latest 200 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
 
 #Arch
-alias install="sudo pacman -S --noconfirm "
-alias remove="sudo pacman -Rs "
-alias update="sudo pacman -Syu && yay -Syu && exit"
+alias install="sudo apt install -y "
+alias remove="sudo apt remove "
+alias update="sudo apt update && sudo apt upgrade && exit"
 
 #Terminal
 alias ex="exit"
@@ -27,19 +27,23 @@ alias nr="npm run dev"
 alias ns="npm start"
 
 # Git
-alias clone="git clone"
+alias clone="git clone "
 
 #Others
 alias pingg="ping google.com"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 #Python
-alias pm="python manage.py"
-alias pv="python -m venv ./venv"
+alias pm="python3 manage.py"
+alias pv="python3 -m venv ./venv"
 alias pi="pip install"
+alias dadmin="django-admin startproject setup ."
 alias ps="source venv/bin/activate"
+alias pms="pm startapp "
 alias pmm="pm migrate"
+alias pmake="pm makemigrations"
 alias pmc="pm createsuperuser"
 alias pmr="pm runserver"
 alias pir="pi -r requirements.txt"
+alias pinit="pv && ps && pi django && dadmin"
 alias pinitial="pv && ps && pir"

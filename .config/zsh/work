@@ -8,7 +8,7 @@ NODE_GLOBALS+=("nvm")
 NODE_GLOBALS+=("yarn")
 
 load_nvm () {
-    source /usr/share/nvm/init-nvm.sh
+    source ~/.local/share/nvm/nvm.sh
 }
 
 for cmd in "${NODE_GLOBALS[@]}"; do
